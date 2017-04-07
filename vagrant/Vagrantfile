@@ -45,7 +45,15 @@ Vagrant.configure(2) do |config|
   #
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
-    vb.gui = false
+    vb.gui = true
+    vb.customize ["modifyvm", :id, "--usb", "on"]
+    vb.customize ["modifyvm", :id, "--usbehci", "on"]
+    vb.customize ["usbfilter", "add", "0", 
+    	"--target", :id, 
+    	"--name", "Lattice FTUSB Interface Cable [0700]",
+    	"--manufacturer", "Lattice",
+    	"--product", "Lattice FTUSB Interface Cable"
+    ]
   
     # Customize the amount of memory on the VM:
     vb.memory = "1024"

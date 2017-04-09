@@ -10,6 +10,8 @@ dnf clean all
 
 echo "Sigasi" | sudo passwd vagrant --stdin
 
+pushd ~
+
 #Installing the IceStorm Tools (icepack, icebox, iceprog, icetime, chip databases):
 mkdir git
 pushd git
@@ -51,5 +53,7 @@ git clone https://github.com/tgingold/ghdlsynth-beta.git ghdlsynth-beta; \
     pushd ghdlsynth-beta; \
     make GHDL_PREFIX=/usr/local; \
     popd
+
+popd
 
 popd

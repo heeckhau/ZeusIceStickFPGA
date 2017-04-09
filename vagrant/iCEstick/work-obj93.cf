@@ -1,4 +1,0 @@
-v 4
-file . "leds.vhd" "0455ff961ed8ab3154ecde445bf07c78180510bf" "20170330143752.787":
-  entity leds at 1( 0) + 0 on 25;
-  architecture blink of leds at 20( 302) + 0 on 26;

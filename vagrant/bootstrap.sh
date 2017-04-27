@@ -9,6 +9,7 @@ sudo dnf -y install make automake gcc gcc-c++ kernel-devel clang bison \
 dnf clean all
 
 echo "Sigasi" | sudo passwd vagrant --stdin
+sudo usermod -aG vboxsf vagrant
 
 pushd ~
 
